@@ -37,7 +37,7 @@ php artisan vendor:publish --provider="Magan\Feedback\FeedbackServiceProvider" -
 ```
 ## Publish config file content
 ```php
-<?ph<?php
+<?php
 /*
     |--------------------------------------------------------------------------
     | Setup your google recaptcha keys
