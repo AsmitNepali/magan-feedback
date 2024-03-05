@@ -36,11 +36,6 @@ class FeedbackServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/feedback.php', 'feedback');
-
-        // Register the service the package provides.
-        $this->app->singleton('feedback', function ($app) {
-            return new Feedback;
-        });
     }
 
     /**
