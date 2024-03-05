@@ -2,11 +2,11 @@
     "name": "magan/feedback",
     "description": ":package_description",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Asmit Nepali",
-            "email": "mail2asmitnepali@email.com",
-            "homepage": "http://author.com"
+            "email": "mail2asmitnepali@email.com"
         }
     ],
     "homepage": "https://github.com/magan/feedback",
