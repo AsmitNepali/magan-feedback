@@ -1,0 +1,41 @@
+{
+    "name": "magan/feedback",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Asmit Nepali",
+            "email": "mail2asmitnepali@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/magan/feedback",
+    "keywords": ["Laravel", "Feedback"],
+    "require": {
+        "illuminate/support": "~10"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.21",
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Magan\\Feedback\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Magan\\Feedback\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Magan\\Feedback\\FeedbackServiceProvider"
+            ],
+            "aliases": {
+                "Feedback": "Magan\\Feedback\\Facades\\Feedback"
+            }
+        }
+    }
+}
