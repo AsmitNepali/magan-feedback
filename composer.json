@@ -13,6 +13,7 @@
     "homepage": "https://github.com/magan/feedback",
     "keywords": ["Laravel", "Feedback"],
     "require": {
+        "php": ">=8.0",
         "illuminate/support": "~10"
     },
     "require-dev": {
