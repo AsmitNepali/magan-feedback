@@ -1,12 +1,13 @@
 {
     "name": "magan/feedback",
-    "description": ":package_description",
+    "description": "This package helps to create quick contact-us form and send email to the admin.",
     "license": "MIT",
     "version": "1.0.0",
     "authors": [
         {
             "name": "Asmit Nepali",
-            "email": "mail2asmitnepali@email.com"
+            "email": "mail2asmitnepali@email.com",
+            "role": "Developer"
         }
     ],
     "homepage": "https://github.com/magan/feedback",
@@ -37,5 +38,7 @@
                 "Feedback": "Magan\\Feedback\\Facades\\Feedback"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
