@@ -9,6 +9,10 @@
     |
     */
 return [
+    'route' => [
+        'prefix' => 'feedback',
+        'middleware' => ['web'],
+    ],
     'recapthca' => [
         'site_key' => env('GOOGLE_RECAPTCHA_SITE_KEY', null),
         'secret_key' => env('GOOGLE_RECAPTCHA_SECRET_KEY', null),

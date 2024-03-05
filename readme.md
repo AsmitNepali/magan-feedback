@@ -37,7 +37,7 @@ php artisan vendor:publish --provider="Magan\Feedback\FeedbackServiceProvider" -
 ```
 ## Publish config file content
 ```php
-<?php
+<?ph<?php
 /*
     |--------------------------------------------------------------------------
     | Setup your google recaptcha keys
@@ -48,6 +48,10 @@ php artisan vendor:publish --provider="Magan\Feedback\FeedbackServiceProvider" -
     |
     */
 return [
+    'route' => [
+        'prefix' => 'feedback',
+        'middleware' => ['web'],
+    ],
     'recapthca' => [
         'site_key' => env('GOOGLE_RECAPTCHA_SITE_KEY', null),
         'secret_key' => env('GOOGLE_RECAPTCHA_SECRET_KEY', null),
@@ -62,7 +66,11 @@ return [
         ],
     ],
 ];
-
+```
+## Route:
+You can change route of your feedback page by changing the configuration key route.
+```
+http://120.0.0.1/feedback
 ```
 ## Change log
 

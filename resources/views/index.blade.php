@@ -3,104 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
         }
-    </script>
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+            background-color: #ffff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            color: #5d6167;
+            display: flex;
+            flex-direction: column;
+            font-family: unset;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        .text-danger {
+            color: #f43f5e;
+            font-size: 12px;
+        }
+
+        .text-success {
+            color: #10b981;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
-<div class="container mx-auto w-1/2 mt-10 border p-8 rounded-lg">
-    <form action="{{route('feedback.send')}}" method="post" id="contact-form">
-        @csrf
-        <div class="space-y-12">
-            <div class="border-b border-gray-900/10 pb-12">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Feedback</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">This information will be helps us to improve out
-                    product.</p>
-
-                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-4">
-                        <label for="fullname" class="block text-sm font-medium leading-6 text-gray-900">Full Name</label>
-                        <div class="mt-2">
-                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="text" name="fullname" id="fullname" autocomplete="fullname"
-                                       class="block flex-1 border-0 bg-transparent py-1.5 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                       placeholder="janesmith"/>
-                            </div>
-                            @error('fullname')
-                                <div class="text-red-500 text-xs">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-4">
-                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
-                        <div class="mt-2">
-                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="email" name="email" id="email" autocomplete="email"
-                                       class="block flex-1 border-0 bg-transparent py-1.5 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                       placeholder="janesmith@gmail.com"/>
-                            </div>
-                            @error('email')
-                            <div class="text-red-500 text-xs">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="sm:col-span-4">
-                        <label for="subject" class="block text-sm font-medium leading-6 text-gray-900">Subject</label>
-                        <div class="mt-2">
-                            <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                                <input type="subject" name="subject" id="subject" autocomplete="subject"
-                                       class="block flex-1 border-0 bg-transparent py-1.5 px-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                       placeholder="subject"/>
-                            </div>
-                            @error('subject')
-                            <div class="text-red-500 text-xs">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="col-span-full">
-                        <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Message</label>
-                        <div class="mt-2">
-                        <textarea id="message" name="message" rows="3"
-                                  class="block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                        </div>
-                        @error('message')
-                        <div class="text-red-500 text-xs">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
+<div>
+    <h1 class="heading">Contact Us</h1>
+    <section>
+        <form class="contact-form" action="{{route('feedback.send')}}" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" class="form-control" id="fullname" name="fullname" required>
+                @error('fullname')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
             </div>
-        </div>
-
-        <div class="mt-6 flex items-center justify-end gap-x-6">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+                @error('email')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" id="subject" name="subject" required>
+                @error('subject')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" class="form-control" name="message" required></textarea>
+                @error('message')
+                <span class="text-danger">{{$message}}</span>
+                @enderror
+            </div>
+            @if(session('message'))
+                <div class="text-success">{{ session('message') }}</div>
+            @endif
             <button type="submit"
-                    class="g-recaptcha rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    @if(config('feedback.recapthca.use')) data-sitekey="{{ config('feedback.recapthca.site_key') }}" @endif
+                    class="g-recaptcha btn"
+                    @if(config('feedback.recapthca.use')) data-sitekey="{{ config('feedback.recapthca.site_key') }}"
+                    @endif
                     data-callback='onSubmit'
                     data-action='submit'
             >
                 Send Feedback
             </button>
-        </div>
-        <div>
-            @if(session('message'))
-                <div class="text-green-500 text-xl">{{ session('message') }}</div>
-            @endif
-        </div>
-    </form>
+        </form>
+    </section>
 </div>
-
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     function onSubmit(token) {
