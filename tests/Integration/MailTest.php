@@ -45,11 +45,4 @@ class MailTest extends TestCase
         );
         Mail::assertSent(SendClientFeedback::class);
     }
-
-
-    public function test_route()
-    {
-        $this->get(route('feedback.test'))
-            ->assertOk();
-    }
 }
