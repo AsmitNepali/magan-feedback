@@ -12,17 +12,17 @@ class FeedbackServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'feedback');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'feedback');
 
         // Publishing is only necessary when using the CLI.
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/feedback'),
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/feedback'),
         ], 'feedback-views');
 
         $this->publishes([
-            __DIR__.'/../config/feedback.php' => config_path('feedback.php'),
+            __DIR__ . '/../config/feedback.php' => config_path('feedback.php'),
         ], 'feedback-config');
 
         if ($this->app->runningInConsole()) {
@@ -35,7 +35,7 @@ class FeedbackServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/feedback.php', 'feedback');
+        $this->mergeConfigFrom(__DIR__ . '/../config/feedback.php', 'feedback');
     }
 
     /**
@@ -55,7 +55,7 @@ class FeedbackServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/feedback.php' => config_path('feedback.php'),
+            __DIR__ . '/../config/feedback.php' => config_path('feedback.php'),
         ], 'feedback.config');
     }
 }

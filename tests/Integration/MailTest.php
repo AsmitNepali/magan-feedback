@@ -8,7 +8,7 @@ use Magan\Feedback\Tests\TestCase;
 
 class MailTest extends TestCase
 {
-    /** @test */
+    // /** @test */
     public function test_mailable_content()
     {
         $mailData = [
@@ -33,14 +33,23 @@ class MailTest extends TestCase
     public function test_email_sending()
     {
         Mail::fake();
-        Mail::send(new SendClientFeedback(
-            [
-                'fullname' => 'John Doe',
-                'email' => 'john@gmail.com',
-                'subject' => 'Test Subject',
-                'message' => 'Test Message',
-            ])
+        Mail::send(
+            new SendClientFeedback(
+                [
+                    'fullname' => 'John Doe',
+                    'email' => 'john@gmail.com',
+                    'subject' => 'Test Subject',
+                    'message' => 'Test Message',
+                ]
+            )
         );
         Mail::assertSent(SendClientFeedback::class);
+    }
+
+
+    public function test_route()
+    {
+        $this->get(route('feedback.test'))
+            ->assertOk();
     }
 }
