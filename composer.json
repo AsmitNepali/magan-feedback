@@ -2,7 +2,7 @@
     "name": "magan/feedback",
     "description": "This package helps to create quick contact-us form and send email to the admin.",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Asmit Nepali",
