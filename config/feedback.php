@@ -13,10 +13,10 @@ return [
         'prefix' => 'feedback',
         'middleware' => ['web'],
     ],
-    'recapthca' => [
+    'recaptcha' => [
         'site_key' => env('GOOGLE_RECAPTCHA_SITE_KEY', null),
         'secret_key' => env('GOOGLE_RECAPTCHA_SECRET_KEY', null),
-        'use' => true,
+        'use' => false,
     ],
     'mail' => [
         'to' => [

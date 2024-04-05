@@ -106,7 +106,7 @@
             @endif
             <button type="submit"
                     class="g-recaptcha btn"
-                    @if(config('feedback.recapthca.use')) data-sitekey="{{ config('feedback.recapthca.site_key') }}"
+                    @if(config('feedback.recaptcha.use')) data-sitekey="{{ config('feedback.recaptcha.site_key') }}"
                     @endif
                     data-callback='onSubmit'
                     data-action='submit'
