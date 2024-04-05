@@ -33,7 +33,7 @@ php artisan vendor:publish --provider="Magan\Feedback\FeedbackServiceProvider" -
 ```
 You can publish and edit the views with:
 ```bash
-php artisan vendor:publish --provider="Magan\Feedback\FeedbackServiceProvider" --tag='feedback-view'
+php artisan vendor:publish --provider="Magan\Feedback\FeedbackServiceProvider" --tag='feedback-views'
 ```
 ## Publish config file content
 ```php
