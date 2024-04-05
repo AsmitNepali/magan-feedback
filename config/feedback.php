@@ -16,7 +16,7 @@ return [
     'recapthca' => [
         'site_key' => env('GOOGLE_RECAPTCHA_SITE_KEY', null),
         'secret_key' => env('GOOGLE_RECAPTCHA_SECRET_KEY', null),
-        'use' => false,
+        'use' => true,
     ],
     'mail' => [
         'to' => [

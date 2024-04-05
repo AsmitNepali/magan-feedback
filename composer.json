@@ -2,7 +2,6 @@
     "name": "magan/feedback",
     "description": "This package helps to create quick contact-us form and send email to the admin.",
     "license": "MIT",
-    "version": "1.0.1",
     "authors": [
         {
             "name": "Asmit Nepali",
@@ -13,8 +12,7 @@
     "homepage": "https://github.com/magan/feedback",
     "keywords": ["Laravel", "Feedback"],
     "require": {
-        "php": ">=8.0",
-        "illuminate/support": "~11"
+        "php": ">=8.0"
     },
     "require-dev": {
         "orchestra/testbench": "^8.21",
